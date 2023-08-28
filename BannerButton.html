@@ -1,0 +1,21 @@
+<iframe width="100%" height="100" frameborder="0" scrolling="no">
+    <div>
+        <label for="bannerText">Enter Banner Text:</label>
+        <input type="text" id="bannerText">
+        <button id="toggleBanner">Toggle Banner</button>
+    </div>
+
+    <script>
+        document.getElementById("toggleBanner").addEventListener("click", function () {
+            var bannerText = document.getElementById("bannerText").value;
+            var bannerPageUrl = "https://your-sharepoint-site-url/SitePages/BannerPage.aspx";
+            var bannerFrame = document.createElement("iframe");
+            bannerFrame.src = bannerPageUrl + "?text=" + encodeURIComponent(bannerText);
+            bannerFrame.width = "100%";
+            bannerFrame.height = "100";
+            bannerFrame.frameBorder = "0";
+            bannerFrame.scrolling = "no";
+            document.body.appendChild(bannerFrame);
+        });
+    </script>
+</iframe>
