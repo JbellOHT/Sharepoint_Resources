@@ -1,0 +1,26 @@
+<iframe srcdoc='
+   <style>
+      .notification-banner {
+         display: none;
+         background-color: red;
+         color: black;
+         font-weight: bold;
+         padding: 10px;
+         text-align: center;
+      }
+   </style>
+   <div class="notification-banner" id="notificationBanner">
+      This is a notification message. Edit this text as needed.
+   </div>
+'></iframe>
+<button id="toggleBanner">Toggle Notification</button>
+<script>
+   document.getElementById("toggleBanner").addEventListener("click", function () {
+       var banner = document.getElementById("notificationBanner");
+       if (banner.style.display === "none") {
+           banner.style.display = "block";
+       } else {
+           banner.style.display = "none";
+       }
+   });
+</script>
